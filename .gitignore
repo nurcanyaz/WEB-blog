@@ -1,0 +1,19 @@
+# Sanal ortam klasörü
+nlpenv/
+
+# Python derleme dosyaları
+__pycache__/
+*.py[cod]
+
+# Ortam dosyaları
+.env
+*.env
+
+# Jupyter notebook checkpoint'leri
+.ipynb_checkpoints/
+
+# VSCode ayarları (isteğe bağlı)
+.vscode/
+
+main.js
+style.css

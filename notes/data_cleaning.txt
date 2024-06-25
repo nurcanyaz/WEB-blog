@@ -1,0 +1,33 @@
+data_cleaning.py – Text Preprocessing Module
+
+The implemented operations include:
+
+1. Removing Extra Whitespace
+   Code: " ".join(text.split())
+   Purpose: Normalize spacing by converting multiple spaces into a single space.
+   Explanation: Enhances consistency in tokenization and ensures that spacing irregularities do not affect analysis or model performance.
+
+2. Lowercasing
+   Code: text.lower()
+   Purpose: Convert all characters to lowercase.
+   Explanation: Standardizes the text and prevents case-sensitive mismatches during tokenization or vectorization (e.g., "Apple" vs. "apple").
+
+3. Removing Punctuation
+   Code: text.translate(str.maketrans("", "", string.punctuation))
+   Purpose: Eliminate all punctuation marks.
+   Explanation: Punctuation is generally not meaningful in most NLP models unless explicitly modeled (e.g., in sentiment analysis or syntactic parsing).
+
+4. Removing Special Characters
+   Code: re.sub(r"[A-Za-z0-9\s]", "", text)
+   Purpose: Strip non-alphanumeric characters and symbols.
+   Explanation: Retains only letters, numbers, and whitespace to reduce input complexity.
+
+5. Correcting Spelling Errors
+   Code: TextBlob(text).correct()
+   Purpose: Automatically fix typographical errors in text.
+   Explanation: TextBlob uses probabilistic models to suggest corrections, increasing the quality and interpretability of the text.
+
+6. Removing HTML Tags
+   Code: BeautifulSoup(html_text, "html.parser").get_text()
+   Purpose: Extract pure text from HTML content.
+   Explanation: Useful in web scraping scenarios to clean raw HTML and isolate meaningful content.

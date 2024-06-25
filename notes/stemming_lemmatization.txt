@@ -1,0 +1,30 @@
+stemming_lemmatization.py – Morphological Normalization Module
+
+
+1. Stemming with Porter Stemmer
+
+from nltk.stem import PorterStemmer
+stemmer = PorterStemmer()
+stems = [stemmer.stem(w) for w in words]
+
+Purpose: Reduce words to their stem or root form using heuristic rules.
+
+Explanation: Stemming removes morphological affixes (e.g., "-ing", "-ed", "-s") to yield a root token. For instance, “running,” “runner,” and “ran” may all be reduced to “run.” However, stemming often leads to non-dictionary forms due to its rule-based and aggressive truncation strategy.
+
+2. Lemmatization with WordNet Lemmatizer
+
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
+lemmas = [lemmatizer.lemmatize(w) for w in words]
+
+Purpose: Convert words to their dictionary base form (lemma).
+
+Explanation: Unlike stemming, lemmatization considers the part of speech and utilizes a lexical database (WordNet) to return meaningful lemmas. For example, "better" is correctly normalized to "good" only through lemmatization. It is more accurate and interpretable than stemming, although computationally heavier.
+
+3. WordNet Database Initialization
+
+nltk.download("wordnet")
+
+Purpose: Download the lexical database required for lemmatization.
+
+Explanation: WordNet provides structured semantic relationships between words, which the lemmatizer uses to return valid dictionary forms.

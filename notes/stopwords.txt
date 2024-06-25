@@ -1,0 +1,53 @@
+stopwords.py – Stopword Removal Module 
+
+Stopwords are very common words in a language (such as “the”, “is”, “are”, “from”)
+that typically carry little semantic weight. Removing them helps clean the data,
+reduce noise, and improve the performance of machine learning and NLP models.
+
+--------------------------------------------------
+1. Loading the Stopword List
+--------------------------------------------------
+
+Code:
+```python
+from nltk.corpus import stopwords
+import nltk
+nltk.download("stopwords")
+
+stop_words = set(stopwords.words("english"))
+
+🔍 Explanation:
+
+This code imports the English stopwords from the NLTK (Natural Language Toolkit) library.
+
+stop_words becomes a Python set containing hundreds of English stopwords.
+
+Using a set improves performance when checking membership (O(1) time complexity).
+
+🎯 Why It Matters:
+
+NLP models work best when they focus on meaningful content. Stopwords often dilute that focus.
+
+Removing them improves feature quality in tasks such as classification, sentiment analysis, or keyword extraction.
+
+Filtering Stopwords from a Text
+
+filtered_words = [word for word in text_list if word.lower() not in stop_words]
+
+🔍 Explanation:
+
+text_list is a list of tokenized words (usually from a sentence or document).
+
+The code converts each word to lowercase (to match the stopwords list) and filters out any stopword.
+
+The result is a list (filtered_words) that includes only the informative, non-stopword words.
+
+Stopword lists are available in many other languages, e.g., stopwords.words("turkish").
+
+For domain-specific tasks, it's often useful to create a custom stopword list to remove irrelevant words
+
+⚠️ Note:
+
+Be sure to install the NLTK package using pip install nltk if it's not already installed.
+
+The line nltk.download("stopwords") is only needed once to fetch the stopwords dataset.
