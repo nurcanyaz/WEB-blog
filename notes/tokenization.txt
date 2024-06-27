@@ -1,0 +1,27 @@
+
+tokenization.py – Tokenization Module
+
+This module focuses on tokenization, one of the most fundamental steps in Natural Language Processing (NLP). Tokenization involves breaking down raw text into smaller units such as words or sentences, which serve as the basic input for most NLP models and algorithms.
+
+1. Word Tokenization
+
+    word_tokens = nltk.word_tokenize(text)
+
+    Purpose: Split the text into individual words (tokens), including punctuation as separate tokens.
+    Explanation: This method uses the Punkt tokenizer from the NLTK library to identify and separate words. It is essential for tasks such as part-of-speech tagging, word embeddings, and frequency analysis.
+
+2. Sentence Tokenization
+
+    sentence_tokens = nltk.sent_tokenize(text)
+
+    Purpose: Segment the text into individual sentences.
+    Explanation: Sentence tokenization allows for higher-level analysis of discourse structure, sentence boundaries, and context. It is particularly useful for tasks like sentiment analysis at the sentence level, summarization, and syntactic parsing.
+
+3. Tokenizer Initialization
+
+    nltk.download("punkt")
+
+    Purpose: Download pre-trained models required for tokenization.
+    Explanation: The Punkt tokenizer is an unsupervised model trained on large corpora to detect sentence boundaries. This step ensures the tokenizer functions correctly, even across complex punctuation and abbreviations.
+
+Tokenization plays a critical role in converting unstructured text into structured formats, enabling efficient and meaningful feature extraction for machine learning models. By breaking down text into sentences and words, this module prepares the input data for subsequent linguistic processing steps such as POS tagging, lemmatization, and vectorization.
